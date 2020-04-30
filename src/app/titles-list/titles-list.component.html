@@ -1,0 +1,48 @@
+<div class="container">
+  <table style="width: 80%;">
+    <thead>
+       <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Year Released</th>
+          <th></th>
+       </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let title of titles">
+          <th>{{ title.titleId }}</th>
+          <td>{{ title.titleName }}</td>
+          <td>{{ title.releaseYear }}</td>
+          <td>
+            <button pButton type="button" label="Details" (click)="onClickDetails($event, title.titleId)"></button>
+          </td>
+       </tr>
+    </tbody>
+  </table>
+  <div *ngIf="display">
+    <app-details [titleId]="selectedTitleId"></app-details>
+  </div>
+</div>
+
+<!-- <p-dialog header="Title Detail" [(visible)]="display">
+  <div>
+    <table>
+      <thead>
+         <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Released</th>
+            <th>Genres</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let title of titles">
+            <th>{{ selectedTitle.titleId }}</th>
+            <td>{{ selectedTitle.titleName }}</td>
+            <td>{{ selectedTitle.releaseYear }}</td>
+            <td>{{ selectedTitle.genres }}</td>
+         </tr>
+      </tbody>
+    </table>
+  </div>>
+</p-dialog> -->

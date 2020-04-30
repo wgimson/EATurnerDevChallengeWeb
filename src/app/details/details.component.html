@@ -1,0 +1,26 @@
+<div>
+  <table style="width: 100%;border: 1px solid gray;">
+    <thead>
+       <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Released</th>
+          <th>Genres</th>
+          <th>Awards</th>
+       </tr>
+    </thead>
+    <tbody>
+       <tr>
+          <th>{{ titleDetails.titleId }}</th>
+          <td>{{ titleDetails.titleName }}</td>
+          <td>{{ titleDetails.releaseYear }}</td>
+          <td>{{ titleDetails.genres }}</td>
+          <td>
+            <div *ngFor="let award of titleDetails.awards">
+              <span>{{ award.awardName }} - {{ award.awardYear }}</span>
+            </div>
+          </td>
+       </tr>
+    </tbody>
+  </table>
+</div>
